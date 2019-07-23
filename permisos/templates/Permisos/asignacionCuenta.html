@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+ 
+{% block content %}
+<form method="post"> 
+{% csrf_token %}
+    <div class="row">
+        <div class="col-sm-1"></div>
+		<div class="col-md-3 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form.idmarca.name}}">{{form.idmarca.label}}</label>
+				{{form.idmarca}}
+			</div>
+		</div>
+        <div class="col-md-3 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form.usrcreation.name}}">{{form.usrcreation.label}}</label>
+				{{form.usrcreation}}
+			</div>
+		</div>
+        <div class="col-md-3 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form.datecreation.name}}">{{form.datecreation.label}}</label>
+				{{form.datecreation}}
+			</div>
+		</div>
+    </div>
+    
+    
+        {{form.idaccountsid}}
+        
+
+    
+    <div class="col-md-3 col-md-offset-2">
+			<div class="form-group">
+				<button type="submit" class="btn btn-success">Guadar</button>
+			</div>
+		</div>
+</form>
+{% endblock %}
